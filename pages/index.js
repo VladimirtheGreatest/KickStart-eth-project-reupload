@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import factory from "../ethereum/factory";
 import { Card, Button } from "semantic-ui-react";
+import factory from "../ethereum/factory";
 import Layout from "../components/Layout";
 import { Link } from "../routes";
 
@@ -10,7 +10,6 @@ class CampaignIndex extends Component {
 
     return { campaigns };
   }
-
   renderCampaigns() {
     const items = this.props.campaigns.map((address) => {
       return {
@@ -23,15 +22,12 @@ class CampaignIndex extends Component {
         fluid: true,
       };
     });
-
     return <Card.Group items={items} />;
   }
-
   render() {
     return (
       <Layout>
         <div>
-          <script src="https://cdn.jsdelivr.net/npm/semantic-ui-react/dist/umd/semantic-ui-react.min.js"></script>
           <h3>Open Campaigns</h3>
           <Link route="/campaigns/new">
             <a>

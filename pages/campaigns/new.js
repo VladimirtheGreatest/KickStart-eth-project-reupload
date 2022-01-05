@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import { Form, Button, Input, Message } from "semantic-ui-react";
 import Layout from "../../components/Layout";
-import { Button, Form, Input, Message } from "semantic-ui-react";
 import factory from "../../ethereum/factory";
 import web3 from "../../ethereum/web3";
 import { Router } from "../../routes";
@@ -14,7 +14,6 @@ class CampaignNew extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-
     this.setState({ loading: true, errorMessage: "" });
 
     try {
@@ -35,8 +34,7 @@ class CampaignNew extends Component {
   render() {
     return (
       <Layout>
-        <h3>Create a campaign!</h3>
-
+        <h3>Create Campaign</h3>
         <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
           <Form.Field>
             <label>Minimum Contribution</label>
@@ -49,12 +47,8 @@ class CampaignNew extends Component {
               }
             />
           </Form.Field>
-          <Message
-            error
-            header="Oops!"
-            content={this.state.errorMessage}
-          ></Message>
-          <Button primary loading={this.state.loading}>
+          <Message error header="Oops!" content={this.state.errorMessage} />
+          <Button loading={this.state.loading} primary>
             Create!
           </Button>
         </Form>
