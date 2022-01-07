@@ -1,4 +1,4 @@
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 const Web3 = require("web3");
 const { interface, bytecode } = require("./compile");
 const compiledFactory = require("./build/CampaignFactory.json");
@@ -24,5 +24,7 @@ const deploy = async () => {
 
   console.log("Contract deployed to", result.options.address);
 };
-//0x28CcC8387CF33Df604B424db41E088B4B4Ac6d0E
+//0x28CcC8387CF33Df604B424db41E088B4B4Ac6d0E  old version
+
+//0x22dB1C073d03C8125a5E328b3d5E8dbDD4c72399  new version
 deploy();
